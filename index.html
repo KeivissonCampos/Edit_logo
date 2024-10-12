@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha a Cor de Fundo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.5s;
+        }
+        .colorFnd {
+            margin-bottom: 20px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #000; /* Para visualizar o contêiner */
+        }
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="colorFnd">
+        <img src="/CorTextLogo/Coleiros du cerrado 1.png" alt="Descrição da imagem">
+    </div>
+    <div>
+        <label for="corFundo">Escolha a cor de fundo:</label>
+        <input type="color" id="corFundo" value="#ffffff">
+    </div>
+
+    <script>
+        const corFundoInput = document.getElementById('corFundo');
+        const colorFndDiv = document.querySelector('.colorFnd');
+
+        corFundoInput.addEventListener('input', (event) => {
+            colorFndDiv.style.backgroundColor = event.target.value;
+        });
+    </script>
+
+</body>
+</html>
