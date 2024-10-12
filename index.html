@@ -15,15 +15,18 @@
         }
         .colorFnd {
             margin-bottom: 20px;
-            height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 2px solid #000; /* Para visualizar o contêiner */
         }
         img {
-            max-height: 100%;
+            max-height: 300px;
             max-width: 100%;
+        }
+        .colorCode {
+            margin-top: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -34,14 +37,18 @@
     <div>
         <label for="corFundo">Escolha a cor de fundo:</label>
         <input type="color" id="corFundo" value="#ffffff">
+        <div class="colorCode">Código da cor: <span id="codigoCor">#ffffff</span></div>
     </div>
 
     <script>
         const corFundoInput = document.getElementById('corFundo');
         const colorFndDiv = document.querySelector('.colorFnd');
+        const codigoCorSpan = document.getElementById('codigoCor');
 
         corFundoInput.addEventListener('input', (event) => {
-            colorFndDiv.style.backgroundColor = event.target.value;
+            const corSelecionada = event.target.value;
+            colorFndDiv.style.backgroundColor = corSelecionada;
+            codigoCorSpan.textContent = corSelecionada; // Atualiza o código da cor
         });
     </script>
 
